@@ -1,0 +1,7 @@
+/workspaces/api/inventory/tests/inventory.Tests/obj/Debug/net6.0/inventory.Tests.csproj.AssemblyReference.cache
+/workspaces/api/inventory/tests/inventory.Tests/obj/Debug/net6.0/MvcTestingAppManifest.json
+/workspaces/api/inventory/tests/inventory.Tests/obj/Debug/net6.0/inventory.Tests.GeneratedMSBuildEditorConfig.editorconfig
+/workspaces/api/inventory/tests/inventory.Tests/obj/Debug/net6.0/inventory.Tests.AssemblyInfoInputs.cache
+/workspaces/api/inventory/tests/inventory.Tests/obj/Debug/net6.0/inventory.Tests.AssemblyInfo.cs
+/workspaces/api/inventory/tests/inventory.Tests/obj/Debug/net6.0/inventory.Tests.csproj.CoreCompileInputs.cache
+/workspaces/api/inventory/tests/inventory.Tests/obj/Debug/net6.0/inventory.Tests.sourcelink.json

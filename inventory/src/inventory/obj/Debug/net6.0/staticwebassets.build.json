@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "bG9PX1RFqfHCDzleAthAGJ8+ieGm5NIQctRTTUHtQLU=",
+  "Source": "inventory",
+  "BasePath": "_content/inventory",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

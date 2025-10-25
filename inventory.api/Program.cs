@@ -41,17 +41,6 @@ builder.Services.AddAuthentication(x =>
     };
 });
 
-// Enable CORS for local development / the UI app
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy("AllowAll", policy =>
-    {
-        policy.AllowAnyOrigin()
-              .AllowAnyHeader()
-              .AllowAnyMethod();
-    });
-});
-
 builder.Services.AddControllers();
 // Swagger/OpenAPI
 builder.Services.AddEndpointsApiExplorer();

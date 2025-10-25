@@ -1,0 +1,94 @@
+{
+  "info": {
+    "name": "Inventory API",
+    "description": "Basic requests for the inventory API (login, stock, sales, customers, purchases)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Login",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"admin\",\n  \"password\": \"Admin123!\"\n}"
+            },
+            "url": "{{baseUrl}}/api/Auth/login"
+          }
+        },
+        {
+          "name": "Register (Admin only)",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" },
+              { "key": "Authorization", "value": "Bearer {{token}}" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"newuser\",\n  \"email\": \"newuser@example.com\",\n  \"password\": \"Password1!\",\n  \"firstName\": \"New\",\n  \"lastName\": \"User\"\n}"
+            },
+            "url": "{{baseUrl}}/api/Auth/register"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Stock",
+      "item": [
+        {
+          "name": "Get All Stock",
+          "request": { "method": "GET", "header": [ { "key": "Authorization", "value": "Bearer {{token}}" } ], "url": "{{baseUrl}}/api/Stock" }
+        },
+        {
+          "name": "Create Stock",
+          "request": {
+            "method": "POST",
+            "header": [ { "key": "Content-Type", "value": "application/json" }, { "key": "Authorization", "value": "Bearer {{token}}" } ],
+            "body": { "mode": "raw", "raw": "{\n  \"itemName\": \"Sample Item\",\n  \"sku\": \"SAMPLE-001\",\n  \"unitPrice\": 12.5,\n  \"wholesalePrice\": 10.0,\n  \"currentQuantity\": 100\n}" },
+            "url": "{{baseUrl}}/api/Stock"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Sales",
+      "item": [
+        {
+          "name": "Create Sale",
+          "request": {
+            "method": "POST",
+            "header": [ { "key": "Content-Type", "value": "application/json" }, { "key": "Authorization", "value": "Bearer {{token}}" } ],
+            "body": { "mode": "raw", "raw": "{\n  \"customerId\": 1,\n  \"paymentMethod\": \"Cash\",\n  \"items\": [ { \"stockId\": 1, \"quantity\": 2, \"unitPrice\": 12.5 } ]\n}" },
+            "url": "{{baseUrl}}/api/Sales"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Customers",
+      "item": [
+        { "name": "Get Customers", "request": { "method": "GET", "header": [ { "key": "Authorization", "value": "Bearer {{token}}" } ], "url": "{{baseUrl}}/api/Customers" } },
+        { "name": "Create Customer", "request": { "method": "POST", "header": [ { "key": "Content-Type", "value": "application/json" }, { "key": "Authorization", "value": "Bearer {{token}}" } ], "body": { "mode": "raw", "raw": "{\n  \"name\": \"Test Retail Customer\",\n  \"customerType\": \"Retail\",\n  \"phone\": \"+1234567890\"\n}" }, "url": "{{baseUrl}}/api/Customers" } }
+      ]
+    },
+    {
+      "name": "Purchases",
+      "item": [
+        { "name": "Create Purchase", "request": { "method": "POST", "header": [ { "key": "Content-Type", "value": "application/json" }, { "key": "Authorization", "value": "Bearer {{token}}" } ], "body": { "mode": "raw", "raw": "{\n  \"clientId\": 1,\n  \"items\": [ { \"stockId\": 1, \"quantity\": 10, \"unitPrice\": 9.0 } ]\n}" }, "url": "{{baseUrl}}/api/Purchases" } }
+      ]
+    },
+    {
+      "name": "Swagger",
+      "item": [
+        { "name": "Open Swagger UI", "request": { "method": "GET", "url": "{{baseUrl}}/swagger" } }
+      ]
+    }
+  ]
+}

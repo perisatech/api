@@ -26,8 +26,8 @@
 
   <!-- Include Program.cs from inventory.api root and exclude local copy to avoid duplicate Program class -->
   <ItemGroup>
-    <Compile Remove="Program.cs" />
-    <Compile Include="..\..\Program.cs">
+    <Compile Remove="Program.cs"/>
+    <Compile Include="Program.cs">
       <Link>Program.cs</Link>
     </Compile>
   </ItemGroup>

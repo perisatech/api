@@ -1,4 +1,4 @@
-const apiBase = 'http://localhost:5000/api';
+const apiBase = 'https://localhost:5001/api';
 let token = null;
 
 function el(id){return document.getElementById(id)}
@@ -10,7 +10,7 @@ async function login(e){
   if(!username||!password){alert('Enter username and password');return}
   try{
     const res = await fetch(`${apiBase}/Auth/login`,{
-      method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({username, password})
+      method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({"username":username, "password":password})
     });
     if(!res.ok){const txt=await res.text(); throw new Error(txt||res.status)}
     const data = await res.json();

@@ -41,6 +41,17 @@ builder.Services.AddAuthentication(x =>
     };
 });
 
+builder.Services.AddCors(options =>
+    {
+        options.AddPolicy(name: "MyAllowSpecificOrigins",
+                          policy =>
+                          {
+                              policy.AllowAnyOrigin()
+                                    .AllowAnyHeader()
+                                    .AllowAnyMethod();
+                          });
+    });
+
 builder.Services.AddControllers();
 // Swagger/OpenAPI
 builder.Services.AddEndpointsApiExplorer();
@@ -62,9 +73,10 @@ else
     app.UseHsts();
 }
 
+
 app.UseHttpsRedirection();
 app.UseRouting();
-
+app.UseCors("MyAllowSpecificOrigins");
 app.UseAuthentication();
 app.UseAuthorization();
 
